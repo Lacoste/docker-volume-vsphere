@@ -12,6 +12,8 @@ define([
   //
   // Services
   //
+  'plugins/docker-volume-plugin/scripts/services/dvol-mock-api-service.js',
+  'plugins/docker-volume-plugin/scripts/services/dvol-state-service.js',
   'plugins/docker-volume-plugin/scripts/services/dvol-context-menu.js',
   'plugins/docker-volume-plugin/scripts/services/dvol-dialog-service.js',
   'plugins/docker-volume-plugin/scripts/services/dvol-datacenter-vm-service.js',
@@ -29,6 +31,8 @@ define([
   //
   // Services
   //
+  DvolMockApiService,
+  DvolStateService,
   DvolContextMenuService,
   DvolDialogService,
   DvolDatacenterVmService,
@@ -48,6 +52,8 @@ define([
     'DvolAddVmsController': DvolAddVmsController
   })
   .service({
+    'DvolMockApiService': DvolMockApiService,
+    'DvolStateService': DvolStateService,
     'DvolDialogService': DvolDialogService,
     'DvolContextMenuService': DvolContextMenuService,
     'DvolDatacenterVmService': DvolDatacenterVmService,
