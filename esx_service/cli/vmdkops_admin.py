@@ -563,10 +563,13 @@ def status(args):
 
 
 def set_vol_opts(args):
-    set_ok = vmdk_ops.set_vol_opts(args.volume, args.options) 
-    if set_ok:
-        print('Successfully updated settings for : {0}'.format(args.volume))
-    else:
+    try:
+        set_ok = vmdk_ops.set_vol_opts(args.volume, args.options) 
+        if set_ok:
+           print('Successfully updated settings for : {0}'.format(args.volume))
+        else:
+           print('Failed to update {0} for {1}.'.format(args.options, args.volume))
+    except Exception as ex:
         print('Failed to update {0} for {1}.'.format(args.options, args.volume))
 
 
